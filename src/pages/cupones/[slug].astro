@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import coupons from '../../data/coupons.json';
+import { getAssetUrl } from '../../utils/url';
 
 export async function getStaticPaths() {
   const c = await coupons;
@@ -35,7 +36,7 @@ if (!coupon || coupon.slug !== slug) {
       <!-- Header del cupón -->
       <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8 lg:flex">
         <img
-          src={coupon.image}
+          src={getAssetUrl(coupon.image)}
           alt={`Imagen de ${coupon.slug}`}
           class="w-full lg:w-1/2 object-cover"
           transition:name={`img-${coupon.slug}`}
@@ -44,7 +45,7 @@ if (!coupon || coupon.slug !== slug) {
           <div>
             <div class="flex items-center mb-4 space-x-3">
               <img
-                src={coupon.logo}
+                src={getAssetUrl(coupon.logo)}
                 alt={`${coupon.slug} logo`}
                 transition:name={`logo-${coupon.slug}`}
                 class="w-12 h-12 object-contain rounded-md bg-gray-100 p-1"

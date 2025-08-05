@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FeaturedCoupons from '../components/FeaturedCoupons.astro';
+import { getAssetUrl } from '../utils/url';
 ---
 <Layout title="Inicio">
 
@@ -9,13 +10,13 @@ import FeaturedCoupons from '../components/FeaturedCoupons.astro';
     <div class="flex flex-col md:flex-row">
       <div class="w-full md:w-1/2 bg-red-600 flex flex-col justify-center items-start p-6 md:p-8">
         <div class="max-w-md mx-auto md:mx-0">
-          <img src="/logo.webp" alt="Logo GoPass" class="w-20 md:w-24 mb-3 md:mb-4" />
+          <img src={getAssetUrl("/logo.webp")} alt="Logo GoPass" class="w-20 md:w-24 mb-3 md:mb-4" />
           <h1 class="text-xl md:text-3xl font-bold text-white mb-2 md:mb-4">2 meses de membresía GRATIS</h1>
           <p class="text-white text-sm md:text-base mb-4 md:mb-6">Paga tus peajes y parqueaderos sin efectivo</p>
           <a href="#" class="bg-white text-red-600 hover:bg-gray-100 py-2 px-4 md:px-6 rounded-md font-bold text-sm md:text-base transition inline-block">DESCARGA AQUÍ</a>
         </div>
       </div>
-      <div class="w-full md:w-1/2 h-[200px] md:h-[400px] bg-cover bg-center" style="background-image: url('/conoce/hero.jpg')"></div>
+      <div class="w-full md:w-1/2 h-[200px] md:h-[400px] bg-cover bg-center" style={`background-image: url(${getAssetUrl('/conoce/hero.jpg')})`}></div>
     </div>
   </section>
 

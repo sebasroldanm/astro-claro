@@ -1,9 +1,6 @@
 ---
-import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { getAssetUrl } from "../utils/url";
 ---
 
 <Layout title="About">
@@ -12,7 +9,7 @@ import Layout from "../layouts/Layout.astro";
       <!-- Banner principal -->
       <div>
         <img
-          src="/conoce/hero.jpg"
+          src={getAssetUrl("/conoce/hero.jpg")}
           alt="Tú puedes descargar cupones, Tú tienes Claro club"
         />
       </div>
@@ -34,7 +31,7 @@ import Layout from "../layouts/Layout.astro";
             class="w-32 md:w-40 bg-white rounded-xl shadow-lg overflow-hidden"
           >
             <img
-              src="/conoce/prepago.png"
+              src={getAssetUrl("/conoce/prepago.png")}
               alt="Prepago"
               class="w-full h-32 object-cover"
             />
@@ -47,7 +44,7 @@ import Layout from "../layouts/Layout.astro";
             class="w-32 md:w-40 bg-white rounded-xl shadow-lg overflow-hidden"
           >
             <img
-              src="/conoce/postpago.png"
+              src={getAssetUrl("/conoce/postpago.png")}
               alt="Postpago"
               class="w-full h-32 object-cover"
             />
@@ -60,7 +57,7 @@ import Layout from "../layouts/Layout.astro";
             class="w-32 md:w-40 bg-white rounded-xl shadow-lg overflow-hidden"
           >
             <img
-              src="/conoce/hogar.png"
+              src={getAssetUrl("/conoce/hogar.png")}
               alt="Hogar"
               class="w-full h-32 object-cover"
             />

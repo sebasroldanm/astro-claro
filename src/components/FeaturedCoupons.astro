@@ -1,5 +1,6 @@
 ---
 import coupons from '../data/coupons.json';
+import { getAssetUrl, getUrl } from '../../src/utils/url';
 ---
 
 <section class="py-4 md:py-5">
@@ -13,7 +14,7 @@ import coupons from '../data/coupons.json';
       >
         <figure class="relative h-32 sm:h-36 md:h-40 w-full">
           <img
-            src={coupon.image}
+            src={getAssetUrl(coupon.image)}
             alt={`Imagen del cupón ${coupon.brand}`}
             class="object-cover w-full h-full"
             transition:name={`img-${coupon.slug}`}
@@ -28,7 +29,7 @@ import coupons from '../data/coupons.json';
                 aria-hidden="true"
               >
                 <img
-                  src={coupon.logo}
+                  src={getAssetUrl(coupon.logo)}
                   alt={`${coupon.brand} logo`}
                   class="h-5 w-5 md:h-6 md:w-6 object-contain"
                   transition:name={`logo-${coupon.slug}`}
@@ -63,7 +64,7 @@ import coupons from '../data/coupons.json';
           </div>
 
           <a
-            href={`/cupones/${coupon.slug}`}
+            href={getUrl(`/cupones/${coupon.slug}`)}
             class="mt-auto block text-center bg-red-600 text-white text-xs md:text-sm font-semibold py-1.5 md:py-2 rounded-lg hover:bg-red-700 transition"
             aria-label={`Ir al detalle del cupón ${coupon.brand}`}
             transition:name={`btn_download-${coupon.slug}`}
