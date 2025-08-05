@@ -1,0 +1,75 @@
+---
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout title="About">
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 space-y-12">
+      <!-- Banner principal -->
+      <div>
+        <img
+          src="/conoce/hero.jpg"
+          alt="Tú puedes descargar cupones, Tú tienes Claro club"
+        />
+      </div>
+
+      <!-- Título y tarjetas de categorías -->
+      <div class="grid grid-cols-2 gap-4">
+        <!-- Texto -->
+        <div class="px-3 pt-5">
+          <h2 class="text-2xl lg:text-3xl font-bold text-gray-800 text-center">
+            En <span class="text-red-600">Claro club</span> ya tienes beneficios
+            sin costo adicional por ser usuario:
+          </h2>
+        </div>
+
+        <!-- Cards -->
+        <div class="grid grid-cols-3 gap-2">
+          <!-- Prepago -->
+          <div
+            class="w-32 md:w-40 bg-white rounded-xl shadow-lg overflow-hidden"
+          >
+            <img
+              src="/conoce/prepago.png"
+              alt="Prepago"
+              class="w-full h-32 object-cover"
+            />
+            <div class="py-2 text-center">
+              <p class="text-sm font-medium text-gray-700">Prepago</p>
+            </div>
+          </div>
+          <!-- Postpago -->
+          <div
+            class="w-32 md:w-40 bg-white rounded-xl shadow-lg overflow-hidden"
+          >
+            <img
+              src="/conoce/postpago.png"
+              alt="Postpago"
+              class="w-full h-32 object-cover"
+            />
+            <div class="py-2 text-center">
+              <p class="text-sm font-medium text-gray-700">Postpago</p>
+            </div>
+          </div>
+          <!-- Hogar -->
+          <div
+            class="w-32 md:w-40 bg-white rounded-xl shadow-lg overflow-hidden"
+          >
+            <img
+              src="/conoce/hogar.png"
+              alt="Hogar"
+              class="w-full h-32 object-cover"
+            />
+            <div class="py-2 text-center">
+              <p class="text-sm font-medium text-gray-700">Hogar</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

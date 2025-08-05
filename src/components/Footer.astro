@@ -1,0 +1,139 @@
+<footer class="bg-black text-white text-center py-6 mt-10 text-sm">
+  <div>
+    Todos los derechos reservados 2025 © Claro Club | <a
+      href="#"
+      class="underline">Términos y condiciones</a
+    >
+  </div>
+</footer>
+
+<!-- Menú de navegación móvil fijo en la parte inferior -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-red-600 text-white z-50">
+  <div class="grid grid-cols-4 text-center">
+    <a href="/" class="flex flex-col items-center justify-center py-2">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+      </svg>
+      <span class="text-xs mt-1">Inicio</span>
+    </a>
+    <button id="categoriesBtn" class="flex flex-col items-center justify-center py-2 w-full">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
+      </svg>
+      <span class="text-xs mt-1">Categorías</span>
+    </button>
+    <a href="/about" class="flex flex-col items-center justify-center py-2">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <span class="text-xs mt-1">Conoce más</span>
+    </a>
+    <a href="#" class="flex flex-col items-center justify-center py-2">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+      </svg>
+      <span class="text-xs mt-1">Perfil</span>
+    </a>
+  </div>
+</nav>
+
+<!-- Espaciador para evitar que el contenido quede detrás del menú fijo en móvil -->
+<div class="md:hidden h-16"></div>
+
+<!-- Menú contextual de categorías -->
+<div id="categoriesMenu" class="fixed inset-0 bg-black bg-opacity-50 z-[60] hidden flex items-center justify-center">
+  <div class="bg-white rounded-lg w-[90%] max-w-md mx-auto overflow-hidden">
+    <div class="p-4 bg-white">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-lg font-bold">Categorías</h3>
+        <button id="closeMenu" class="text-gray-500 hover:text-gray-700">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="grid grid-cols-3 gap-4">
+        <!-- Más Descargados -->
+        <a href="#" class="flex flex-col items-center p-2 hover:bg-gray-50 rounded-lg">
+          <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-2">
+            <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+            </svg>
+          </div>
+          <span class="text-xs text-center">Más Descargados</span>
+        </a>
+        
+        <!-- Comidas -->
+        <a href="#" class="flex flex-col items-center p-2 hover:bg-gray-50 rounded-lg">
+          <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-2">
+            <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/>
+            </svg>
+          </div>
+          <span class="text-xs text-center">Comidas</span>
+        </a>
+        
+        <!-- Productos Claro -->
+        <a href="#" class="flex flex-col items-center p-2 hover:bg-gray-50 rounded-lg">
+          <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-2">
+            <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+            </svg>
+          </div>
+          <span class="text-xs text-center">Productos Claro</span>
+        </a>
+        
+        <!-- Viajes -->
+        <a href="#" class="flex flex-col items-center p-2 hover:bg-gray-50 rounded-lg">
+          <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-2">
+            <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+            </svg>
+          </div>
+          <span class="text-xs text-center">Viajes</span>
+        </a>
+        
+        <!-- Entretenimiento -->
+        <a href="#" class="flex flex-col items-center p-2 hover:bg-gray-50 rounded-lg">
+          <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-2">
+            <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M21 6h-7.59l3.29-3.29L16 2l-4 4-4-4-.71.71L10.59 6H3c-1.1 0-2 .89-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.11-.9-2-2-2zm0 14H3V8h18v12zM9 10v8l7-4z"/>
+            </svg>
+          </div>
+          <span class="text-xs text-center">Entretenimiento</span>
+        </a>
+        
+        <!-- Mascotas -->
+        <a href="#" class="flex flex-col items-center p-2 hover:bg-gray-50 rounded-lg">
+          <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-2">
+            <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M4.5 9.5m-2.5 0a2.5 2.5 0 1 1 5 0a2.5 2.5 0 1 1 -5 0M9 5.5m-2.5 0a2.5 2.5 0 1 1 5 0a2.5 2.5 0 1 1 -5 0M15 5.5m-2.5 0a2.5 2.5 0 1 1 5 0a2.5 2.5 0 1 1 -5 0M19.5 9.5m-2.5 0a2.5 2.5 0 1 1 5 0a2.5 2.5 0 1 1 -5 0M17.34 14.86c-.87-1.02-1.6-1.89-2.48-2.91-.46-.54-1.05-1.08-1.75-1.32-.11-.04-.22-.07-.33-.09-.25-.04-.52-.04-.78-.04s-.53 0-.79.05c-.11.02-.22.05-.33.09-.7.24-1.28.78-1.75 1.32-.87 1.02-1.6 1.89-2.48 2.91-1.31 1.31-2.92 2.76-2.62 4.79.29 1.02 1.02 2.03 2.33 2.32.73.15 3.06-.44 5.54-.44h.18c2.48 0 4.81.58 5.54.44 1.31-.29 2.04-1.31 2.33-2.32.31-2.04-1.3-3.49-2.61-4.8z"/>
+            </svg>
+          </div>
+          <span class="text-xs text-center">Mascotas</span>
+        </a>
+        
+        <!-- Variedades -->
+        <a href="#" class="flex flex-col items-center p-2 hover:bg-gray-50 rounded-lg">
+          <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-2">
+            <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM7 10.82C5.84 10.4 5 9.3 5 8V7h2v3.82zM19 8c0 1.3-.84 2.4-2 2.82V7h2v1z"/>
+            </svg>
+          </div>
+          <span class="text-xs text-center">Variedades</span>
+        </a>
+        
+        <!-- Educación -->
+        <a href="#" class="flex flex-col items-center p-2 hover:bg-gray-50 rounded-lg">
+          <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-2">
+            <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+            </svg>
+          </div>
+          <span class="text-xs text-center">Educación</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

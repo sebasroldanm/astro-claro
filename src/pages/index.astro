@@ -1,11 +1,135 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import FeaturedCoupons from '../components/FeaturedCoupons.astro';
 ---
+<Layout title="Inicio">
 
-<Layout>
-	<Welcome />
+  <!-- Banner -->
+  <section class="relative h-auto bg-cover bg-center">
+    <div class="flex flex-col md:flex-row">
+      <div class="w-full md:w-1/2 bg-red-600 flex flex-col justify-center items-start p-6 md:p-8">
+        <div class="max-w-md mx-auto md:mx-0">
+          <img src="/logo.webp" alt="Logo GoPass" class="w-20 md:w-24 mb-3 md:mb-4" />
+          <h1 class="text-xl md:text-3xl font-bold text-white mb-2 md:mb-4">2 meses de membresía GRATIS</h1>
+          <p class="text-white text-sm md:text-base mb-4 md:mb-6">Paga tus peajes y parqueaderos sin efectivo</p>
+          <a href="#" class="bg-white text-red-600 hover:bg-gray-100 py-2 px-4 md:px-6 rounded-md font-bold text-sm md:text-base transition inline-block">DESCARGA AQUÍ</a>
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 h-[200px] md:h-[400px] bg-cover bg-center" style="background-image: url('/conoce/hero.jpg')"></div>
+    </div>
+  </section>
+
+    <!-- Sección de Categorías -->
+    <section class="bg-gray-50 py-4 md:py-8">
+        <div class="container mx-auto px-2 md:px-4">
+            <h2 class="text-xl md:text-2xl font-bold text-gray-800 text-center mb-4 md:mb-8">Categorías</h2>
+            
+            <!-- Contenedor scrolleable -->
+            <div class="overflow-x-auto pb-2 md:pb-4 -mx-2 px-2">
+                <div class="flex space-x-3 md:space-x-6 min-w-max">
+                    
+                    <!-- Más Descargados -->
+                    <div class="flex flex-col items-center group">
+                        <button class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-xl md:rounded-2xl p-2 shadow-sm flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg group-hover:scale-105">
+                            <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+                                <svg class="w-5 h-5 md:w-6 md:h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                                </svg>
+                            </div>
+                            <span class="text-[10px] md:text-xs text-gray-700 mt-1 md:mt-2 text-center min-h-[2rem] md:min-h-[2.5rem] group-hover:text-red-600 flex items-center justify-center">Más Descargados</span>
+                        </button>
+                    </div>
+
+                    <!-- Comidas -->
+                    <div class="flex flex-col items-center group">
+                        <button class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-xl md:rounded-2xl p-2 shadow-sm flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg group-hover:scale-105">
+                            <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+                                <svg class="w-5 h-5 md:w-6 md:h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/>
+                                </svg>
+                            </div>
+                            <span class="text-[10px] md:text-xs text-gray-700 mt-1 md:mt-2 text-center min-h-[2rem] md:min-h-[2.5rem] group-hover:text-red-600 flex items-center justify-center">Comidas</span>
+                        </button>
+                    </div>
+
+                    <!-- Productos Claro -->
+                    <div class="flex flex-col items-center group">
+                        <button class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-xl md:rounded-2xl p-2 shadow-sm flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg group-hover:scale-105">
+                            <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+                                <svg class="w-5 h-5 md:w-6 md:h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+                                </svg>
+                            </div>
+                            <span class="text-[10px] md:text-xs text-gray-700 mt-1 md:mt-2 text-center min-h-[2rem] md:min-h-[2.5rem] group-hover:text-red-600 flex items-center justify-center">Productos Claro</span>
+                        </button>
+                    </div>
+
+                    <!-- Viajes -->
+                    <div class="flex flex-col items-center group">
+                        <button class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-xl md:rounded-2xl p-2 shadow-sm flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg group-hover:scale-105">
+                            <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+                                <svg class="w-5 h-5 md:w-6 md:h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.19 4H4c-1.1 0-1.99.9-1.99 2v4c1.1 0 1.99.9 1.99 2s-.89 2-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.81-2-1.81-2zm-2.46 9.3l-8.86 2.36-1.66-2.88.93-.25 1.26 1.13 3.3-.89-1.14-3.36L12.9 9l1.76 3.5 2.65-.7c.43-.11.86.22.75.65-.08.32-.34.57-.68.65z"/>
+                                </svg>
+                            </div>
+                            <span class="text-[10px] md:text-xs text-gray-700 mt-1 md:mt-2 text-center min-h-[2rem] md:min-h-[2.5rem] group-hover:text-red-600 flex items-center justify-center">Viajes</span>
+                        </button>
+                    </div>
+
+                    <!-- Entretenimiento -->
+                    <div class="flex flex-col items-center group">
+                        <button class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-xl md:rounded-2xl p-2 shadow-sm flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg group-hover:scale-105">
+                            <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+                                <svg class="w-5 h-5 md:w-6 md:h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"/>
+                                </svg>
+                            </div>
+                            <span class="text-[10px] md:text-xs text-gray-700 mt-1 md:mt-2 text-center min-h-[2rem] md:min-h-[2.5rem] group-hover:text-red-600 flex items-center justify-center">Entretenimiento</span>
+                        </button>
+                    </div>
+
+                    <!-- Mascotas -->
+                    <div class="flex flex-col items-center group">
+                        <button class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-xl md:rounded-2xl p-2 shadow-sm flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg group-hover:scale-105">
+                            <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+                                <svg class="w-5 h-5 md:w-6 md:h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M4.5 12c0-1.58.67-3.01 1.76-4.01C5.51 6.51 5 5.18 5 3.76 5 2.23 6.23 1 7.76 1c.65 0 1.25.21 1.74.56C10.42 1.21 11.67 1 13 1c1.33 0 2.58.21 3.5.56.49-.35 1.09-.56 1.74-.56C19.77 1 21 2.23 21 3.76c0 1.42-.51 2.75-1.26 3.73 1.09 1 1.76 2.43 1.76 4.01 0 2.21-1.79 4-4 4-.78 0-1.5-.21-2.13-.56-.63.35-1.35.56-2.13.56-.78 0-1.5-.21-2.13-.56-.63.35-1.35.56-2.13.56-2.21 0-4-1.79-4-4zm9.5-3c0 .83-.67 1.5-1.5 1.5S11 9.83 11 9s.67-1.5 1.5-1.5S14 8.17 14 9zm-6 0c0 .83-.67 1.5-1.5 1.5S5 9.83 5 9s.67-1.5 1.5-1.5S8 8.17 8 9z"/>
+                                </svg>
+                            </div>
+                            <span class="text-[10px] md:text-xs text-gray-700 mt-1 md:mt-2 text-center min-h-[2rem] md:min-h-[2.5rem] group-hover:text-red-600 flex items-center justify-center">Mascotas</span>
+                        </button>
+                    </div>
+
+                    <!-- Variedades -->
+                    <div class="flex flex-col items-center group">
+                        <button class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-xl md:rounded-2xl p-2 shadow-sm flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg group-hover:scale-105">
+                            <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+                                <svg class="w-5 h-5 md:w-6 md:h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/>
+                                </svg>
+                            </div>
+                            <span class="text-[10px] md:text-xs text-gray-700 mt-1 md:mt-2 text-center min-h-[2rem] md:min-h-[2.5rem] group-hover:text-red-600 flex items-center justify-center">Variedades</span>
+                        </button>
+                    </div>
+
+
+                    <!-- Educación -->
+                    <div class="flex flex-col items-center group">
+                        <button class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-xl md:rounded-2xl p-2 shadow-sm flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg group-hover:scale-105">
+                            <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+                                <svg class="w-5 h-5 md:w-6 md:h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                                  </svg>
+                            </div>
+                            <span class="text-[10px] md:text-xs text-gray-700 mt-1 md:mt-2 text-center min-h-[2rem] md:min-h-[2.5rem] group-hover:text-red-600 flex items-center justify-center">Educación</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- Sección de cupones -->
+  <FeaturedCoupons />
 </Layout>

@@ -1,0 +1,88 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import coupons from '../../data/coupons.json';
+
+export async function getStaticPaths() {
+  const c = await coupons;
+  
+  return c.map(c => ({
+    params: { slug: c.slug },
+    props: { coupon: c }
+  }));
+}
+
+const { coupon } = Astro.props;
+const { slug } = Astro.params;
+
+if (!coupon || coupon.slug !== slug) {
+  throw new Error(`Cupón con slug "${slug}" no encontrado`);
+}
+---
+
+<Layout title={coupon.title}>
+  <div slot="nav">
+    <a href="/" class="py-2 px-4 bg-red-600 text-white text-sm font-medium">Inicio</a>
+    <a href="#" class="py-2 px-4 text-gray-700 hover:text-red-600 text-sm font-medium">Categorías</a>
+    <a href="#" class="py-2 px-4 text-gray-700 hover:text-red-600 text-sm font-medium">Conoce Claro club</a>
+  </div>
+
+  <main class="max-w-5xl mx-auto px-4 py-8">
+    <nav class="text-sm text-gray-500 mb-4">
+        Inicio / Cupones / Comidas / 
+        <strong class="text-gray-700">{slug.replace(/-/g, ' ')}</strong>
+      </nav>
+
+      <!-- Header del cupón -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8 lg:flex">
+        <img
+          src={coupon.image}
+          alt={`Imagen de ${coupon.slug}`}
+          class="w-full lg:w-1/2 object-cover"
+          transition:name={`img-${coupon.slug}`}
+        />
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center mb-4 space-x-3">
+              <img
+                src={coupon.logo}
+                alt={`${coupon.slug} logo`}
+                transition:name={`logo-${coupon.slug}`}
+                class="w-12 h-12 object-contain rounded-md bg-gray-100 p-1"
+              />
+              {coupon.destacado && (
+                <span class="text-xs bg-red-500 text-white px-2 py-1 rounded font-semibold">
+                  Más descargados 🔥
+                </span>
+              )}
+            </div>
+            <h1 class="text-2xl font-bold mb-3 text-gray-900 dark:text-gray-900" transition:name={`title-${coupon.slug}`}>{coupon.title}</h1>
+            <p class="text-gray-600 mb-4 prose">{coupon.description}</p>
+          </div>
+
+          <div>
+            <button class="bg-red-600 text-white font-semibold py-2 px-4 rounded hover:bg-red-700 transition" transition:name={`btn_download-${coupon.slug}`}>
+              Descargar Cupón
+            </button>
+            <p class="text-xs text-gray-400 mt-2">{coupon.valid}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Instrucciones y términos -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl shadow p-6">
+          <h2 class="font-semibold mb-3">Cómo hacer uso del cupón</h2>
+          <ol class="list-decimal list-inside text-gray-600 space-y-1">
+            {coupon.instructions.map((step) => (
+              <li>{step}</li>
+            ))}
+          </ol>
+        </div>
+        <div class="bg-white rounded-xl shadow p-6">
+          <h2 class="font-semibold mb-3">Términos de este cupón</h2>
+          <p class="text-gray-600">{coupon.terms}</p>
+          <a href="#" class="inline-block mt-2 text-blue-500 text-sm">Leer más</a>
+        </div>
+      </div>
+  </main>
+</Layout>
