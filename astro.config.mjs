@@ -8,5 +8,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  site: 'https://sebasroldanm.github.io/astro-claro/'
+  site: 'https://sebasroldanm.github.io',
+  base: '/astro-claro/'
 });
